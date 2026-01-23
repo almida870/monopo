@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Delta Script Hub Free | Blox Fruits, Steal a Brainrot, Grow a Garden &amp; Ink Game (2026)
+  </title>
+  <meta content="High-performance scripts for Blox Fruits, Steal a Brainrot, Grow a Garden, Pet Simulator 99 and Ink Game — updated for 2026 and made for PC &amp; mobile." name="description"/>
+  <meta content="roblox scripts, blox fruits script, steal a brainrot script, grow a garden script, ink game script, pet simulator 99 script, delta script hub, tsunami brainrot script" name="keywords"/>
+  <!-- Open Graph Tags for SEO -->
+  <meta property="og:title" content="Delta Script Hub Free | Blox Fruits, Steal a Brainrot, Grow a Garden & Ink Game (2026)">
+  <meta property="og:description" content="High-performance scripts for Blox Fruits, Steal a Brainrot, Grow a Garden, Pet Simulator 99 and Ink Game — updated for 2026 and made for PC & mobile.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.deltascripthub.com/">
+  <meta property="og:image" content="https://www.deltascripthub.com/og-image.jpg">
+  <meta property="og:site_name" content="Delta Script Hub Free">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Delta Script Hub Free | Blox Fruits, Steal a Brainrot, Grow a Garden & Ink Game (2026)">
+  <meta name="twitter:description" content="High-performance scripts for Blox Fruits, Steal a Brainrot, Grow a Garden, Pet Simulator 99 and Ink Game — updated for 2026 and made for PC & mobile.">
+  <meta name="twitter:image" content="https://www.deltascripthub.com/twitter-image.jpg">
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+  <style>
+   html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', sans-serif; 
+            background-color: #0f172a;
+            color: #f1f5f9;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        }
+        .card { 
+            background-color: #1e293b; 
+            border: 1px solid #334155;
+            transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease; 
+            cursor: pointer;
+            position: relative;
+        }
+        .card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7); 
+            border-color: #3b82f6;
+            background-color: #1e293b;
+        }
+        .primary-cta { 
+            transition: transform .18s ease, background-color .18s ease, box-shadow .18s ease; 
+            cursor: pointer;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        .primary-cta:hover { 
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+        .primary-cta:active { 
+            transform: translateY(1px); 
+        }
+        .pulse-dot {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .category-btn {
+            transition: all 0.25s ease;
+            border: 1px solid #475569;
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        .category-btn:hover, .category-btn.active {
+            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+            border-color: #3b82f6;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        .testimonial-bg {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        /* Overlay effect for card click */
+        .card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: transparent;
+            transition: background-color 0.2s ease;
+            border-radius: 0.75rem;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .card:hover::after {
+            background-color: rgba(59, 130, 246, 0.08);
+        }
+        .card:active::after {
+            background-color: rgba(59, 130, 246, 0.12);
+        }
+        /* Ensure card content is above the overlay */
+        .card > * {
+            position: relative;
+            z-index: 2;
+        }
+        .card-clickable {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 5;
+            cursor: pointer;
+        }
+        /* Delta gradient text */
+        .delta-gradient {
+            background: linear-gradient(135deg, #ffffff, #60a5fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        /* Search bar styles */
+        .search-container {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        .search-input {
+            background: transparent;
+            outline: none;
+            width: 100%;
+        }
+        .search-input::placeholder {
+            color: #94a3b8;
+        }
+        .search-btn {
+            transition: all 0.2s ease;
+        }
+        .search-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+        }
+        /* No results message */
+        .no-results {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 3rem;
+        }
+        /* Status badges */
+        .status-badge {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        .update-badge {
+            background: #1e293b;
+            border: 1px solid #334155;
+        }
+        /* Footer */
+        footer {
+            background: #0f172a;
+            border-top: 1px solid #334155;
+        }
+        /* Section backgrounds */
+        section {
+            background-color: #0f172a;
+        }
+        /* Category filtering highlight */
+        .highlight-category {
+            animation: highlight 1.5s ease;
+            border-color: #3b82f6;
+            box-shadow: 0 0 25px rgba(59, 130, 246, 0.4);
+        }
+        @keyframes highlight {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+  </style>
+ </head>
+ <body class="text-gray-100">
+  <!-- HERO -->
+  <header class="hero-section pt-6 pb-6 md:pt-20 md:pb-12">
+   <div class="container mx-auto max-w-4xl text-center px-4">
+    <h1 class="text-2xl md:text-5xl font-extrabold tracking-tight uppercase mb-3 delta-gradient">
+     Delta Script Hub Free
+    </h1>
+    <p class="text-gray-200 max-w-2xl mx-auto mb-6">
+     High-performance scripts for Blox Fruits, Steal a Brainrot, Grow a Garden, Pet Simulator 99 and Ink Game — updated for 2026 and made for PC &amp; mobile.
+    </p>
+    <div class="flex flex-col sm:flex-row justify-center gap-4 items-center">
+     <div class="px-4 py-2 rounded-md inline-flex items-center gap-3 status-badge">
+      <span class="w-3 h-3 bg-green-500 rounded-full pulse-dot">
+      </span>
+      <span class="text-sm font-semibold">
+       Status:
+      </span>
+      <span class="text-gray-200 font-medium">
+       Active / Updated
+      </span>
+     </div>
+     <div class="px-4 py-2 rounded-md inline-flex items-center gap-3 update-badge">
+      <span class="text-sm font-semibold">
+       Last Update:
+      </span>
+      <span class="text-gray-200 font-medium" id="hero-update">
+      </span>
+     </div>
+    </div>
+   </div>
+  </header>
+  <!-- SEARCH BAR -->
+  <section class="py-6 px-4 border-b border-gray-700 bg-gray-900">
+   <div class="container mx-auto max-w-4xl">
+    <div class="search-container rounded-xl p-4">
+     <div class="flex items-center gap-3">
+      <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      <input class="search-input text-gray-200 text-lg font-medium placeholder-gray-400" id="search-input" placeholder="Search scripts... (e.g., 'tsunami', 'brainrot', 'blox fruits', 'pet sim')" type="text"/>
+      <button class="search-btn bg-blue-600 hover:bg-blue-700 text-white font-semibold px-2 py-2 md:px-6 md:py-3 rounded-lg flex items-center gap-2" id="search-btn">
+       Search
+       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+        <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+        </path>
+       </svg>
+      </button>
+     </div>
+     <div class="mt-4 flex flex-wrap gap-2 hidden" id="search-tags">
+      <span class="text-sm text-gray-300">
+       Popular:
+      </span>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="tsunami">
+       tsunami
+      </button>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="brainrot">
+       brainrot
+      </button>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="blox fruits">
+       blox fruits
+      </button>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="pet sim">
+       pet sim
+      </button>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="garden">
+       garden
+      </button>
+      <button class="search-tag px-3 py-1 text-sm bg-gray-800 hover:bg-gray-700 text-gray-200 rounded-full transition-colors" data-search="ink game">
+       ink game
+      </button>
+     </div>
+    </div>
+   </div>
+  </section>
+  <!-- CATEGORIES -->
+  <section class="py-6 px-4 border-b border-gray-700 bg-gray-900">
+   <div class="container mx-auto max-w-7xl">
+    <div class="flex flex-nowrap overflow-x-auto justify-start md:flex-wrap md:overflow-visible md:justify-center gap-3 md:gap-4 scrollbar-hide">
+     <button class="category-btn active px-5 py-2 md:py-3 rounded-xl text-white font-medium flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      All Scripts
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="blox-fruits">
+      <svg class="w-5 h-5 text-blue-400" fill="currentColor" viewbox="0 0 20 20">
+       <path clip-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" fill-rule="evenodd">
+       </path>
+      </svg>
+      Blox Fruits
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="steal-a-brainrot">
+      <svg class="w-5 h-5 text-rose-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Steal a Brainrot
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="grow-a-garden">
+      <svg class="w-5 h-5 text-emerald-400" fill="currentColor" viewbox="0 0 20 20">
+       <path clip-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" fill-rule="evenodd">
+       </path>
+      </svg>
+      Grow a Garden
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="pet-simulator-99">
+      <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Pet Simulator 99
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="ink-game">
+      <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Ink Game
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="the-forge">
+      <svg class="w-5 h-5 text-orange-400" fill="currentColor" viewbox="0 0 20 20">
+       <path clip-rule="evenodd" d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z" fill-rule="evenodd">
+       </path>
+      </svg>
+      The Forge
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="fish-it">
+      <svg class="w-5 h-5 text-cyan-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Fish It
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="99-nights">
+      <svg class="w-5 h-5 text-violet-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      99 Nights
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="rivals">
+      <svg class="w-5 h-5 text-red-400" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      Rivals
+     </button>
+     <button class="category-btn px-5 py-2 md:py-3 rounded-xl text-gray-200 font-medium flex items-center gap-2" data-category="executors">
+      <svg class="w-5 h-5 text-indigo-400" fill="currentColor" viewbox="0 0 20 20">
+       <path clip-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" fill-rule="evenodd">
+       </path>
+      </svg>
+      Executors
+     </button>
+    </div>
+   </div>
+  </section>
+  <!-- SCRIPTS GRID -->
+  <main class="py-12 px-4" id="scripts">
+   <div class="container mx-auto max-w-7xl">
+    <h2 class="text-3xl font-bold text-white text-center mb-10">
+     Featured Scripts
+    </h2>
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-8" id="scripts-grid">
+     <!-- Tsunami for Brainrot Script (NOW FIRST) -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="steal-a-brainrot" data-search="tsunami brainrot steal a brainrot wave mechanics enhanced auto steal overpowered abilities">
+      <div class="card-clickable" data-script-name="Tsunami for Brainrot Script">
+      </div>
+      <img alt="Tsunami for Brainrot Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Tsunami+Brainrot';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183735/delta_script_assets/r9so88adyvtfat6m0l3e.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Tsunami for Brainrot Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Advanced script for Steal a Brainrot featuring tsunami wave mechanics, enhanced auto-steal, and overpowered abilities to dominate matches.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Tsunami Wave Mechanics
+       </li>
+       <li>
+        ✔ Enhanced Auto-Steal
+       </li>
+       <li>
+        ✔ Overpowered Abilities
+       </li>
+       <li>
+        ✔ Advanced Anti-Kick
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Tsunami for Brainrot Script">
+       Get Tsunami Script
+      </button>
+     </article>
+     <!-- Blox Fruits Redz Hub Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="blox-fruits" data-search="redz hub blox fruits auto farm devil fruit sniper god mode raid">
+      <div class="card-clickable" data-script-name="Redz Hub Script">
+      </div>
+      <img alt="Blox Fruits Redz Hub Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Redz+Hub';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183737/delta_script_assets/wsnm16qokkl7wxtmzdpi.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Redz Hub Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-farm, Devil Fruit sniper, God Mode, instant raid wins — everything to speed up progression and dominate the seas.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Farm &amp; Auto-Quest
+       </li>
+       <li>
+        ✔ Fruit finder &amp; Sniper
+       </li>
+       <li>
+        ✔ Auto-Raid &amp; God Mode
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Redz Hub Script">
+       Get Redz Hub Script
+      </button>
+     </article>
+     <!-- Pet Simulator 99 Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="pet-simulator-99" data-search="pet simulator 99 auto hatch farm instant egg opening coin multiplier exclusive pets">
+      <div class="card-clickable" data-script-name="Pet Simulator 99 Script">
+      </div>
+      <img alt="Pet Simulator 99 Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Pet+Sim+99';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183738/delta_script_assets/y3j0aa6efrz0biwg91qq.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Pet Simulator 99 Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-hatch, auto-farm, instant egg opening, coin multiplier, and exclusive pets. Dominate Pet Simulator 99 effortlessly.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Hatch &amp; Auto-Farm
+       </li>
+       <li>
+        ✔ Instant Egg Opening
+       </li>
+       <li>
+        ✔ Coin Multiplier &amp; Exclusives
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-amber-600 hover:bg-amber-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Pet Simulator 99 Script">
+       Get Pet Sim 99 Script
+      </button>
+     </article>
+     <!-- Steal a Brainrot God -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="steal-a-brainrot" data-search="steal brainrot god auto steal player esp walkspeed anti kick">
+      <div class="card-clickable" data-script-name="Steal a Brainrot God">
+      </div>
+      <img alt="Steal a Brainrot Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Steal+Brainrot';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183739/delta_script_assets/d7ju3e5vplmiuysfln6a.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Steal a Brainrot God
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-steal, player ESP, walkspeed, anti-kick — designed to confuse opponents and push you straight to the top.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Steal &amp; Instant Win
+       </li>
+       <li>
+        ✔ Player ESP &amp; Walkspeed
+       </li>
+       <li>
+        ✔ Anti-Kick &amp; Undetected
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-rose-600 hover:bg-rose-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Steal a Brainrot God">
+       Get Brainrot Script
+      </button>
+     </article>
+     <!-- Grow a Garden Pet Spawner -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="grow-a-garden" data-search="grow garden pet spawner unlimited auto collect boost rare companions">
+      <div class="card-clickable" data-script-name="Grow a Garden Pet Spawner">
+      </div>
+      <img alt="Grow a Garden Pet Spawner Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Garden+Spawner';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183741/delta_script_assets/jhdfwoxfc4anln15vefx.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Grow a Garden Pet Spawner
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Spawn unlimited pets, boost your garden growth, auto-collect rewards, and unlock rare companions effortlessly.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Unlimited Pet Spawning
+       </li>
+       <li>
+        ✔ Auto-Collect &amp; Boosts
+       </li>
+       <li>
+        ✔ Rare Pet Unlocks
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Grow a Garden Pet Spawner">
+       Get Garden Script
+      </button>
+     </article>
+     <!-- Ink Game Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="ink-game" data-search="ink game reveal glass teleport god mode kill all anti detection">
+      <div class="card-clickable" data-script-name="Ink Game Script">
+      </div>
+      <img alt="Ink Game Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Ink+Game';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183743/delta_script_assets/tmisboxtnsntjtwylyce.png"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Ink Game Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Unlock hidden features, teleport across maps, reveal glass paths, and enable godlike powers in Ink Game.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Reveal Bad Glass
+       </li>
+       <li>
+        ✔ God Mode &amp; Teleport
+       </li>
+       <li>
+        ✔ Kill All &amp; Anti-Detection
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-purple-600 hover:bg-purple-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Ink Game Script">
+       Get Ink Game Script
+      </button>
+     </article>
+     <!-- Rivals Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="rivals" data-search="rivals auto farm pvp instant win god mode combat movement hacks">
+      <div class="card-clickable" data-script-name="Rivals Script">
+      </div>
+      <img alt="Rivals Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Rivals+Script';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183744/delta_script_assets/chs2sbznf2mw680n1lvy.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Rivals Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Dominate Rivals with this powerful script featuring auto-farm, auto-pvp, instant win, and advanced combat features.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Farm &amp; Auto-PVP
+       </li>
+       <li>
+        ✔ Instant Win &amp; God Mode
+       </li>
+       <li>
+        ✔ Combat &amp; Movement Hacks
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-red-600 hover:bg-red-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Rivals Script">
+       Get Rivals Script
+      </button>
+     </article>
+     <!-- The Forge Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="the-forge" data-search="the forge auto craft instant resource multiplier speed hack">
+      <div class="card-clickable" data-script-name="The Forge Script">
+      </div>
+      <img alt="The Forge Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=The+Forge';" src="https://placehold.co/600x350/1e293b/ffffff?text=The+Forge+Script"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       The Forge Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-craft, instant forge, resource multiplier, and advanced automation for The Forge game. Maximize your efficiency.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Craft &amp; Instant Forge
+       </li>
+       <li>
+        ✔ Resource Multiplier
+       </li>
+       <li>
+        ✔ Auto-Collect &amp; Speed Hack
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-orange-600 hover:bg-orange-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="The Forge Script">
+       Get Forge Script
+      </button>
+     </article>
+     <!-- Fish It Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="fish-it" data-search="fish it auto fishing rare magnet instant catch unlimited stamina">
+      <div class="card-clickable" data-script-name="Fish It Script">
+      </div>
+      <img alt="Fish It Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Fish+It';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183745/delta_script_assets/mulafuhyydmpvficilzl.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Fish It Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-fishing, rare fish magnet, instant catch, and unlimited stamina. Catch legendary fish with minimal effort.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Fishing &amp; Instant Catch
+       </li>
+       <li>
+        ✔ Rare Fish Magnet
+       </li>
+       <li>
+        ✔ Unlimited Stamina
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Fish It Script">
+       Get Fish It Script
+      </button>
+     </article>
+     <!-- 99 Nights Script -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="99-nights" data-search="99 nights auto survival night skip instant kill god mode resource">
+      <div class="card-clickable" data-script-name="99 Nights Script">
+      </div>
+      <img alt="99 Nights Script" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=99+Nights';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183747/delta_script_assets/vvy16ebc91qvolgcfyeg.png"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       99 Nights Script
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Auto-survival, night skip, instant kill, and god mode. Survive all 99 nights with ease and dominate the game.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Auto-Survival &amp; Night Skip
+       </li>
+       <li>
+        ✔ Instant Kill &amp; God Mode
+       </li>
+       <li>
+        ✔ Resource Auto-Collect
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-violet-600 hover:bg-violet-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="99 Nights Script">
+       Get 99 Nights Script
+      </button>
+     </article>
+     <!-- Delta Executor 2026 -->
+     <article class="card rounded-xl p-2 md:p-5 flex flex-col" data-category="executors" data-search="delta executor 2026 premium built-in script hub keyless mobile anti-ban">
+      <div class="card-clickable" data-script-name="Delta Executor 2026">
+      </div>
+      <img alt="Delta Executor 2026" class="w-full h-32 md:h-48 object-cover rounded-lg mb-4 border border-gray-700" onerror="this.onerror=null;this.src='https://placehold.co/600x340/0f172a/ffffff?text=Delta+Executor';" src="https://res.cloudinary.com/dnf7visu8/image/upload/v1769183748/delta_script_assets/j5wj99km11iu9fwkh19f.jpg"/>
+      <h3 class="text-sm font-bold truncate md:text-xl md:whitespace-normal mb-2">
+       Delta Executor 2026
+      </h3>
+      <p class="hidden md:block text-gray-200 mb-4 flex-grow">
+       Premium executor with built-in script hub, keyless system, mobile support, and anti-ban protection for all games.
+      </p>
+      <ul class="hidden md:block text-sm text-gray-200 mb-5 space-y-2">
+       <li>
+        ✔ Built-in Script Hub
+       </li>
+       <li>
+        ✔ Keyless System
+       </li>
+       <li>
+        ✔ Mobile Support &amp; Anti-Ban
+       </li>
+      </ul>
+      <button class="primary-cta inline-block text-center bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs py-1.5 md:text-base md:py-3 rounded-lg w-full" data-script-name="Delta Executor 2026">
+       Get Delta Executor
+      </button>
+     </article>
+    </div>
+    <!-- No Results Message -->
+    <div class="no-results hidden" id="no-results">
+     <div class="text-center">
+      <svg class="w-16 h-16 text-gray-500 mx-auto mb-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+       <path d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+       </path>
+      </svg>
+      <h3 class="text-2xl font-bold text-gray-300 mb-2">
+       No Scripts Found
+      </h3>
+      <p class="text-gray-400 mb-4">
+       Try searching for something else like "tsunami", "brainrot", or "blox fruits"
+      </p>
+      <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-lg" id="clear-search">
+       Clear Search &amp; Show All
+      </button>
+     </div>
+    </div>
+   </div>
+  </main>
+  <!-- TESTIMONIALS -->
+  <section class="py-12 px-4 border-t border-gray-700 bg-gray-900">
+   <div class="container mx-auto max-w-4xl">
+    <h3 class="text-2xl font-bold text-white text-center mb-6">
+     What Players Say
+    </h3>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+     <blockquote class="testimonial-bg p-5 rounded-lg text-gray-200">
+      "Maxed my Blox Fruits in hours. The auto-farm is insane."
+      <br/>
+      <strong class="text-white mt-2 block">
+       — PirateKing42
+      </strong>
+     </blockquote>
+     <blockquote class="testimonial-bg p-5 rounded-lg text-gray-200">
+      "Brainrot script carried me through the season. Smooth &amp; simple."
+      <br/>
+      <strong class="text-white mt-2 block">
+       — xX_Shadow_Xx
+      </strong>
+     </blockquote>
+     <blockquote class="testimonial-bg p-5 rounded-lg text-gray-200">
+      "Garden script helped me get all the rare pets in just one day!"
+      <br/>
+      <strong class="text-white mt-2 block">
+       — GreenThumb99
+      </strong>
+     </blockquote>
+     <blockquote class="testimonial-bg p-5 rounded-lg text-gray-200">
+      "Ink Game script made impossible levels easy. Highly recommend!"
+      <br/>
+      <strong class="text-white mt-2 block">
+       — InkMaster
+      </strong>
+     </blockquote>
+    </div>
+   </div>
+  </section>
+  <!-- FOOTER -->
+  <footer class="text-center py-8 px-4 border-t border-gray-700">
+   <p class="text-sm text-gray-300">
+    ©
+    <span id="year">
+    </span>
+    Delta Script Hub Free. All rights reserved.
+   </p>
+   <p class="text-xs text-gray-400 mt-2">
+    Provided for educational purposes only.
+   </p>
+  </footer>
+  <!-- Dynamic dates and category filtering -->
+  <script>
+   document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('hero-update').textContent = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+
+        // Search functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchBtn = document.getElementById('search-btn');
+            const searchTags = document.querySelectorAll('.search-tag');
+            const clearSearchBtn = document.getElementById('clear-search');
+            const scriptCards = document.querySelectorAll('[data-category]');
+            const scriptsGrid = document.getElementById('scripts-grid');
+            const noResults = document.getElementById('no-results');
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            
+            // Show search tags after a delay
+            setTimeout(() => {
+                document.getElementById('search-tags').classList.remove('hidden');
+            }, 1500);
+            
+            // Search function
+            function performSearch(searchTerm) {
+                searchTerm = searchTerm.toLowerCase().trim();
+                
+                if (searchTerm === '') {
+                    // Show all cards
+                    scriptCards.forEach(card => {
+                        card.style.display = 'flex';
+                        card.classList.remove('highlight-category');
+                    });
+                    noResults.classList.add('hidden');
+                    scriptsGrid.classList.remove('hidden');
+                    return;
+                }
+                
+                let foundCount = 0;
+                
+                // Search through all cards
+                scriptCards.forEach(card => {
+                    const cardTitle = card.querySelector('h3').textContent.toLowerCase();
+                    const cardDescription = card.querySelector('p').textContent.toLowerCase();
+                    const cardFeatures = card.querySelector('ul').textContent.toLowerCase();
+                    const cardSearchData = card.getAttribute('data-search') || '';
+                    
+                    // Check if search term matches any part of the card
+                    const matches = cardTitle.includes(searchTerm) || 
+                                   cardDescription.includes(searchTerm) || 
+                                   cardFeatures.includes(searchTerm) ||
+                                   cardSearchData.includes(searchTerm);
+                    
+                    if (matches) {
+                        card.style.display = 'flex';
+                        card.classList.add('highlight-category');
+                        setTimeout(() => {
+                            card.classList.remove('highlight-category');
+                        }, 1500);
+                        foundCount++;
+                    } else {
+                        card.style.display = 'none';
+                        card.classList.remove('highlight-category');
+                    }
+                });
+                
+                // Show/hide no results message
+                if (foundCount === 0) {
+                    scriptsGrid.classList.add('hidden');
+                    noResults.classList.remove('hidden');
+                } else {
+                    scriptsGrid.classList.remove('hidden');
+                    noResults.classList.add('hidden');
+                }
+                
+                // Update URL for sharing
+                const url = new URL(window.location);
+                url.searchParams.set('search', searchTerm);
+                window.history.replaceState({}, '', url);
+            }
+            
+            // Event listeners for search
+            searchBtn.addEventListener('click', () => {
+                performSearch(searchInput.value);
+            });
+            
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    performSearch(searchInput.value);
+                }
+            });
+            
+            // Search tag clicks
+            searchTags.forEach(tag => {
+                tag.addEventListener('click', () => {
+                    const searchTerm = tag.getAttribute('data-search');
+                    searchInput.value = searchTerm;
+                    performSearch(searchTerm);
+                });
+            });
+            
+            // Clear search button
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = '';
+                performSearch('');
+                // Reset to "All Scripts" view
+                categoryButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
+                categoryButtons.forEach(btn => btn.classList.add('text-gray-200'));
+                categoryButtons[0].classList.add('active', 'text-white');
+                categoryButtons[0].classList.remove('text-gray-200');
+            });
+            
+            // Category filtering functionality
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Clear search when category is clicked
+                    searchInput.value = '';
+                    
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
+                    categoryButtons.forEach(btn => btn.classList.add('text-gray-200'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active', 'text-white');
+                    this.classList.remove('text-gray-200');
+                    
+                    const category = this.getAttribute('data-category') || this.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+                    
+                    // Show all if "All Scripts" is clicked
+                    if (!this.hasAttribute('data-category') && this.textContent.trim().toLowerCase() === 'all scripts') {
+                        scriptCards.forEach(card => {
+                            card.style.display = 'flex';
+                            card.classList.remove('highlight-category');
+                        });
+                        noResults.classList.add('hidden');
+                        scriptsGrid.classList.remove('hidden');
+                        return;
+                    }
+                    
+                    // Filter scripts by category with highlight effect
+                    let foundInCategory = 0;
+                    scriptCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (cardCategory === category) {
+                            card.style.display = 'flex';
+                            card.classList.add('highlight-category');
+                            setTimeout(() => {
+                                card.classList.remove('highlight-category');
+                            }, 1500);
+                            foundInCategory++;
+                        } else {
+                            card.style.display = 'none';
+                            card.classList.remove('highlight-category');
+                        }
+                    });
+                    
+                    // Show/hide no results
+                    if (foundInCategory === 0) {
+                        scriptsGrid.classList.add('hidden');
+                        noResults.classList.remove('hidden');
+                        noResults.querySelector('h3').textContent = 'No Scripts in This Category';
+                        noResults.querySelector('p').textContent = 'Try selecting a different category or use the search bar above.';
+                    } else {
+                        scriptsGrid.classList.remove('hidden');
+                        noResults.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Check URL for search parameter on page load
+            window.addEventListener('load', function() {
+                const urlParams = new URLSearchParams(window.location.search);
+                const searchParam = urlParams.get('search');
+                const categoryParam = urlParams.get('category');
+                
+                // Handle search parameter
+                if (searchParam) {
+                    searchInput.value = searchParam;
+                    performSearch(searchParam);
+                }
+                
+                // Handle category parameter
+                if (categoryParam) {
+                    const categoryMap = {
+                        'pet-simulator-99': 'Pet Simulator 99',
+                        'rivals': 'Rivals',
+                        'blox-fruits': 'Blox Fruits',
+                        'steal-a-brainrot': 'Steal a Brainrot',
+                        'grow-a-garden': 'Grow a Garden',
+                        'ink-game': 'Ink Game',
+                        'the-forge': 'The Forge',
+                        'fish-it': 'Fish It',
+                        '99-nights': '99 Nights',
+                        'executors': 'Executors'
+                    };
+                    
+                    if (categoryMap[categoryParam]) {
+                        const categoryBtn = Array.from(document.querySelectorAll('.category-btn')).find(btn => 
+                            btn.getAttribute('data-category') === categoryParam || 
+                            btn.textContent.trim().toLowerCase().includes(categoryParam.replace(/-/g, ' '))
+                        );
+                        
+                        if (categoryBtn) {
+                            categoryBtn.click();
+                        }
+                    }
+                }
+            });
+
+            // Auto scroll to scripts section after short delay
+            setTimeout(() => {
+                const scriptsSection = document.getElementById("scripts");
+                if (scriptsSection) {
+                    scriptsSection.scrollIntoView({ behavior: "smooth" });
+                }
+            }, 1200);
+        });
+  </script>
+  <!-- Microsoft Clarity -->
+  <script type="text/javascript">
+   (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "sp384evjd6");
+  </script>
+  <script>
+   function openLocker() { 
+            og_load();
+        }
+
+        // Add click events to all primary CTAs (buttons)
+        document.querySelectorAll('.primary-cta').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event from bubbling to card
+                openLocker();
+            });
+        });
+
+        // Add click events to the entire card via the clickable overlay
+        document.querySelectorAll('.card-clickable').forEach(overlay => {
+            overlay.addEventListener('click', function(e) {
+                e.preventDefault();
+                e.stopPropagation(); // Prevent event from bubbling to card
+                openLocker();
+            });
+        });
+
+        // Also make the card itself clickable (backup for the overlay)
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                // Don't trigger if click was on the button (handled separately)
+                if (e.target.classList.contains('primary-cta') || e.target.closest('.primary-cta')) {
+                    return;
+                }
+                // Don't trigger if click was on the overlay (handled separately)
+                if (e.target.classList.contains('card-clickable') || e.target.closest('.card-clickable')) {
+                    return;
+                }
+                openLocker();
+            });
+        });
+  </script>
+  <script crossorigin="anonymous" data-cf-beacon='{"version":"2024.11.0","token":"49bb4b06fed941ff9f55d9aaf3d567a5","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' defer="" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015">
+  </script>
+  <script>
+   // Disable right-click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // Disable keyboard shortcuts for viewing source code
+        document.addEventListener('keydown', event => {
+            if (event.key === 'F12' ||
+                (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+                (event.ctrlKey && event.shiftKey && event.key === 'J') ||
+                (event.ctrlKey && event.key === 'U')) {
+                event.preventDefault();
+            }
+        });
+  </script>
+  <script id="ogjs" src="https://lockedapp.store/cl/js/m55o9n" type="text/javascript">
+  </script>
+ </body>
+</html>
