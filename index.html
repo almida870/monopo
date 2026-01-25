@@ -745,31 +745,29 @@
   <script>
     // --- Core Functions ---
     function openLocker(clickedElement) {
+        // First, check for AdBlock immediately.
+        if (typeof og_load === 'undefined') {
+            window.alert("AdBlock Detected! Please disable AdBlock to verify.");
+            return; // Stop execution if AdBlock is detected.
+        }
+
         if (!clickedElement || clickedElement.disabled) return;
 
         const originalHTML = clickedElement.innerHTML;
         clickedElement.innerHTML = '<span class="spinner"></span> Generating Script...';
         clickedElement.disabled = true;
 
-        let og_load_fired = false;
-        
-        if (typeof og_load === "function") {
-            try {
-                og_load();
-                og_load_fired = true;
-            } catch (e) {
-                console.error("og_load() execution failed:", e);
-                og_load_fired = false; 
-            }
-        }
-
-        setTimeout(() => {
-            if (!og_load_fired) {
-                alert("AdBlock Detected! Please disable it to continue.");
+        try {
+            og_load();
+        } catch (e) {
+            console.error("og_load() execution failed:", e);
+            // Optional: Restore button if og_load fails for other reasons.
+            setTimeout(() => {
+                alert("An error occurred. Please try again.");
                 clickedElement.innerHTML = originalHTML;
                 clickedElement.disabled = false;
-            }
-        }, 2000);
+            }, 500);
+        }
     }
 
     // --- Event Listeners Setup ---
@@ -777,13 +775,23 @@
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('hero-update').textContent = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
 
-        // --- Locker Triggers ---
-        document.querySelectorAll('.primary-cta').forEach(btn => {
-            btn.addEventListener('click', function(e) {
+        // --- Global Click Listener (Event Delegation) ---
+        document.body.addEventListener('click', function(e) {
+            const ctaButton = e.target.closest('.primary-cta');
+            const cardElement = e.target.closest('.card');
+
+            if (ctaButton) {
                 e.preventDefault();
                 e.stopPropagation();
-                openLocker(e.currentTarget);
-            });
+                openLocker(ctaButton);
+            } else if (cardElement) {
+                // Trigger only if the click is on the card but not on a button inside it
+                const buttonInside = cardElement.querySelector('.primary-cta');
+                if (buttonInside) {
+                     e.preventDefault();
+                     openLocker(buttonInside);
+                }
+            }
         });
 
         // --- Search and Filter Logic ---
@@ -797,16 +805,15 @@
 
         function performFilter() {
             const searchTerm = searchInput.value.toLowerCase().trim();
-            const activeCategoryButton = document.querySelector('.category-btn.active');
-            const activeCategory = activeCategoryButton ? activeCategoryButton.dataset.category : undefined;
-
+            let activeCategory = document.querySelector('.category-btn.active').dataset.category;
+            
             let hasVisibleCards = false;
 
             scriptCards.forEach(card => {
                 const cardCategory = card.dataset.category || '';
-                const cardSearchData = card.dataset.search ? card.dataset.search.toLowerCase() : '';
+                const cardSearchData = (card.dataset.search || '').toLowerCase();
 
-                const categoryMatch = activeCategory === undefined || cardCategory === activeCategory;
+                const categoryMatch = !activeCategory || cardCategory === activeCategory;
                 const searchMatch = searchTerm === '' || cardSearchData.includes(searchTerm);
 
                 if (categoryMatch && searchMatch) {
@@ -845,13 +852,13 @@
                 }
             });
         }
-
+        
         if (clearSearchBtn) {
             clearSearchBtn.addEventListener('click', (e) => {
                 e.preventDefault();
                 searchInput.value = '';
                 categoryButtons.forEach(btn => btn.classList.remove('active'));
-                const allScriptsBtn = document.querySelector('.category-btn'); // first one is "All Scripts"
+                const allScriptsBtn = document.querySelector('.category-btn');
                 if(allScriptsBtn) allScriptsBtn.classList.add('active');
                 performFilter();
             });
