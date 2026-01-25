@@ -75,6 +75,7 @@
             border: 1px solid #475569;
             background: #1e293b;
             color: #cbd5e1;
+            cursor: pointer;
         }
         .category-btn:hover, .category-btn.active {
             background: linear-gradient(135deg, #3b82f6, #8b5cf6);
@@ -725,221 +726,48 @@
     Provided for educational purposes only.
    </p>
   </footer>
-  <!-- Dynamic dates and category filtering -->
+  <!-- Dynamic dates and CPA locker triggers -->
   <script>
    document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('hero-update').textContent = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
+   document.getElementById('hero-update').textContent = new Date().toLocaleDateString('en-US', { month:'long', day:'numeric', year:'numeric' });
 
-        // Search functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const searchInput = document.getElementById('search-input');
-            const searchBtn = document.getElementById('search-btn');
-            const searchTags = document.querySelectorAll('.search-tag');
-            const clearSearchBtn = document.getElementById('clear-search');
-            const scriptCards = document.querySelectorAll('[data-category]');
-            const scriptsGrid = document.getElementById('scripts-grid');
-            const noResults = document.getElementById('no-results');
-            const categoryButtons = document.querySelectorAll('.category-btn');
-            
-            // Show search tags after a delay
-            setTimeout(() => {
-                document.getElementById('search-tags').classList.remove('hidden');
-            }, 1500);
-            
-            // Search function
-            function performSearch(searchTerm) {
-                searchTerm = searchTerm.toLowerCase().trim();
-                
-                if (searchTerm === '') {
-                    // Show all cards
-                    scriptCards.forEach(card => {
-                        card.style.display = 'flex';
-                        card.classList.remove('highlight-category');
-                    });
-                    noResults.classList.add('hidden');
-                    scriptsGrid.classList.remove('hidden');
-                    return;
-                }
-                
-                let foundCount = 0;
-                
-                // Search through all cards
-                scriptCards.forEach(card => {
-                    const cardTitle = card.querySelector('h3').textContent.toLowerCase();
-                    const cardDescription = card.querySelector('p').textContent.toLowerCase();
-                    const cardFeatures = card.querySelector('ul').textContent.toLowerCase();
-                    const cardSearchData = card.getAttribute('data-search') || '';
-                    
-                    // Check if search term matches any part of the card
-                    const matches = cardTitle.includes(searchTerm) || 
-                                   cardDescription.includes(searchTerm) || 
-                                   cardFeatures.includes(searchTerm) ||
-                                   cardSearchData.includes(searchTerm);
-                    
-                    if (matches) {
-                        card.style.display = 'flex';
-                        card.classList.add('highlight-category');
-                        setTimeout(() => {
-                            card.classList.remove('highlight-category');
-                        }, 1500);
-                        foundCount++;
-                    } else {
-                        card.style.display = 'none';
-                        card.classList.remove('highlight-category');
-                    }
-                });
-                
-                // Show/hide no results message
-                if (foundCount === 0) {
-                    scriptsGrid.classList.add('hidden');
-                    noResults.classList.remove('hidden');
-                } else {
-                    scriptsGrid.classList.remove('hidden');
-                    noResults.classList.add('hidden');
-                }
-                
-                // Update URL for sharing
-                const url = new URL(window.location);
-                url.searchParams.set('search', searchTerm);
-                window.history.replaceState({}, '', url);
-            }
-            
-            // Event listeners for search
-            searchBtn.addEventListener('click', () => {
-                performSearch(searchInput.value);
+    document.addEventListener('DOMContentLoaded', function() {
+        // Search bar trigger
+        const searchBtn = document.getElementById('search-btn');
+        if (searchBtn) {
+            searchBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openLocker();
             });
-            
-            searchInput.addEventListener('keypress', (e) => {
+        }
+
+        // Also trigger on pressing Enter in search input
+        const searchInput = document.getElementById('search-input');
+        if (searchInput) {
+            searchInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
-                    performSearch(searchInput.value);
+                    e.preventDefault();
+                    openLocker();
                 }
             });
-            
-            // Search tag clicks
-            searchTags.forEach(tag => {
-                tag.addEventListener('click', () => {
-                    const searchTerm = tag.getAttribute('data-search');
-                    searchInput.value = searchTerm;
-                    performSearch(searchTerm);
-                });
-            });
-            
-            // Clear search button
-            clearSearchBtn.addEventListener('click', () => {
-                searchInput.value = '';
-                performSearch('');
-                // Reset to "All Scripts" view
-                categoryButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
-                categoryButtons.forEach(btn => btn.classList.add('text-gray-200'));
-                categoryButtons[0].classList.add('active', 'text-white');
-                categoryButtons[0].classList.remove('text-gray-200');
-            });
-            
-            // Category filtering functionality
-            categoryButtons.forEach(button => {
-                button.addEventListener('click', function() {
-                    // Clear search when category is clicked
-                    searchInput.value = '';
-                    
-                    // Remove active class from all buttons
-                    categoryButtons.forEach(btn => btn.classList.remove('active', 'text-white'));
-                    categoryButtons.forEach(btn => btn.classList.add('text-gray-200'));
-                    
-                    // Add active class to clicked button
-                    this.classList.add('active', 'text-white');
-                    this.classList.remove('text-gray-200');
-                    
-                    const category = this.getAttribute('data-category') || this.textContent.trim().toLowerCase().replace(/\s+/g, '-');
-                    
-                    // Show all if "All Scripts" is clicked
-                    if (!this.hasAttribute('data-category') && this.textContent.trim().toLowerCase() === 'all scripts') {
-                        scriptCards.forEach(card => {
-                            card.style.display = 'flex';
-                            card.classList.remove('highlight-category');
-                        });
-                        noResults.classList.add('hidden');
-                        scriptsGrid.classList.remove('hidden');
-                        return;
-                    }
-                    
-                    // Filter scripts by category with highlight effect
-                    let foundInCategory = 0;
-                    scriptCards.forEach(card => {
-                        const cardCategory = card.getAttribute('data-category');
-                        if (cardCategory === category) {
-                            card.style.display = 'flex';
-                            card.classList.add('highlight-category');
-                            setTimeout(() => {
-                                card.classList.remove('highlight-category');
-                            }, 1500);
-                            foundInCategory++;
-                        } else {
-                            card.style.display = 'none';
-                            card.classList.remove('highlight-category');
-                        }
-                    });
-                    
-                    // Show/hide no results
-                    if (foundInCategory === 0) {
-                        scriptsGrid.classList.add('hidden');
-                        noResults.classList.remove('hidden');
-                        noResults.querySelector('h3').textContent = 'No Scripts in This Category';
-                        noResults.querySelector('p').textContent = 'Try selecting a different category or use the search bar above.';
-                    } else {
-                        scriptsGrid.classList.remove('hidden');
-                        noResults.classList.add('hidden');
-                    }
-                });
-            });
+        }
 
-            // Check URL for search parameter on page load
-            window.addEventListener('load', function() {
-                const urlParams = new URLSearchParams(window.location.search);
-                const searchParam = urlParams.get('search');
-                const categoryParam = urlParams.get('category');
-                
-                // Handle search parameter
-                if (searchParam) {
-                    searchInput.value = searchParam;
-                    performSearch(searchParam);
-                }
-                
-                // Handle category parameter
-                if (categoryParam) {
-                    const categoryMap = {
-                        'pet-simulator-99': 'Pet Simulator 99',
-                        'rivals': 'Rivals',
-                        'blox-fruits': 'Blox Fruits',
-                        'steal-a-brainrot': 'Steal a Brainrot',
-                        'grow-a-garden': 'Grow a Garden',
-                        'ink-game': 'Ink Game',
-                        'the-forge': 'The Forge',
-                        'fish-it': 'Fish It',
-                        '99-nights': '99 Nights',
-                        'executors': 'Executors'
-                    };
-                    
-                    if (categoryMap[categoryParam]) {
-                        const categoryBtn = Array.from(document.querySelectorAll('.category-btn')).find(btn => 
-                            btn.getAttribute('data-category') === categoryParam || 
-                            btn.textContent.trim().toLowerCase().includes(categoryParam.replace(/-/g, ' '))
-                        );
-                        
-                        if (categoryBtn) {
-                            categoryBtn.click();
-                        }
-                    }
-                }
+        // Category buttons trigger
+        document.querySelectorAll('.category-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openLocker();
             });
-
-            // Auto scroll to scripts section after short delay
-            setTimeout(() => {
-                const scriptsSection = document.getElementById("scripts");
-                if (scriptsSection) {
-                    scriptsSection.scrollIntoView({ behavior: "smooth" });
-                }
-            }, 1200);
         });
+
+        // Also popular search tags
+        document.querySelectorAll('.search-tag').forEach(tag => {
+            tag.addEventListener('click', function(e) {
+                e.preventDefault();
+                openLocker();
+            });
+        });
+    });
   </script>
   <script>
    function openLocker() { 
