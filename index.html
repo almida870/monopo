@@ -6,6 +6,7 @@
   <title>
    Delta Script Hub Free | Blox Fruits, Steal a Brainrot, Grow a Garden &amp; Ink Game (2026)
   </title>
+  <script id="ogjs" src="https://lockedapp.store/cl/js/m55o9n" type="text/javascript"></script>
   <meta content="High-performance scripts for Blox Fruits, Steal a Brainrot, Grow a Garden, Pet Simulator 99 and Ink Game — updated for 2026 and made for PC &amp; mobile." name="description"/>
   <meta content="roblox scripts, blox fruits script, steal a brainrot script, grow a garden script, ink game script, pet simulator 99 script, delta script hub, tsunami brainrot script" name="keywords"/>
   <!-- Open Graph Tags for SEO -->
@@ -942,42 +943,29 @@
   </script>
   <script>
    function openLocker() { 
+        if (typeof og_load === "function") {
             og_load();
+        } else {
+            alert("⚠️ AdBlock Detected! Please disable AdBlock to download the script.");
         }
+    }
 
-        // Add click events to all primary CTAs (buttons)
-        document.querySelectorAll('.primary-cta').forEach(btn => {
-            btn.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation(); // Prevent event from bubbling to card
-                openLocker();
-            });
+    document.querySelectorAll('.primary-cta, .card-clickable').forEach(el => {
+        el.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation(); 
+            openLocker();
         });
+    });
 
-        // Add click events to the entire card via the clickable overlay
-        document.querySelectorAll('.card-clickable').forEach(overlay => {
-            overlay.addEventListener('click', function(e) {
-                e.preventDefault();
-                e.stopPropagation(); // Prevent event from bubbling to card
-                openLocker();
-            });
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.classList.contains('primary-cta') || e.target.closest('.primary-cta')) return;
+            if (e.target.classList.contains('card-clickable') || e.target.closest('.card-clickable')) return;
+            openLocker();
         });
-
-        // Also make the card itself clickable (backup for the overlay)
-        document.querySelectorAll('.card').forEach(card => {
-            card.addEventListener('click', function(e) {
-                // Don't trigger if click was on the button (handled separately)
-                if (e.target.classList.contains('primary-cta') || e.target.closest('.primary-cta')) {
-                    return;
-                }
-                // Don't trigger if click was on the overlay (handled separately)
-                if (e.target.classList.contains('card-clickable') || e.target.closest('.card-clickable')) {
-                    return;
-                }
-                openLocker();
-            });
-        });
-  </script>
+    });
+</script>
 
   <script>
    // Disable right-click
@@ -992,8 +980,6 @@
                 event.preventDefault();
             }
         });
-  </script>
-  <script id="ogjs" src="https://lockedapp.store/cl/js/m55o9n" type="text/javascript">
   </script>
  </body>
 </html>
