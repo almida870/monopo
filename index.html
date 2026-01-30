@@ -32,8 +32,27 @@
         })(window, document, "clarity", "script", "v64jwb5akl");
     </script>
     
-    <!-- CPA Locker Script -->
-    <script type="text/javascript" id="ogjs" src="https://verify.dlta.live/cl/js/m55o9n"></script>
+    <!-- CPA Locker Scripts with Fallback -->
+    <noscript><meta http-equiv="refresh" content="0;url=https://verify.dlta.live/noscript" /></noscript>
+    <script type="text/javascript">var ogblock=true;</script>
+    
+    <!-- Primary Locker (m4prn) -->
+    <script type="text/javascript" id="ogjs" src="https://verify.dlta.live/cl/js/m4prn"></script>
+    <script type="text/javascript">if(ogblock) window.location.href = "https://verify.dlta.live/adblock";</script>
+    
+    <!-- Fallback Locker (m55o9n) - loads if primary fails -->
+    <script type="text/javascript">
+        // Fallback loader
+        setTimeout(function() {
+            if(typeof og_load !== 'function') {
+                console.log('Primary locker failed, loading fallback...');
+                var fallbackScript = document.createElement('script');
+                fallbackScript.src = 'https://verify.dlta.live/cl/js/m55o9n';
+                fallbackScript.id = 'ogjs-fallback';
+                document.head.appendChild(fallbackScript);
+            }
+        }, 2000);
+    </script>
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles.css"/>

