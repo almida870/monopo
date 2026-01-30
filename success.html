@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transfer Complete</title>
+    <style>
+        body {
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            color: white;
+            text-align: center;
+        }
+        .success-card {
+            background: linear-gradient(145deg, #1cc310, #159c0c);
+            padding: 40px 20px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(28, 195, 16, 0.4);
+            animation: popUp 0.5s ease-out;
+        }
+        h1 { margin: 0; font-size: 28px; text-transform: uppercase; text-shadow: 2px 2px 0 #000; }
+        p { font-size: 16px; margin-top: 15px; opacity: 0.9; }
+        .checkmark {
+            width: 80px; height: 80px; background: white; border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px;
+        }
+        .checkmark::after {
+            content: '✔'; font-size: 40px; color: #1cc310; font-weight: bold;
+        }
+        .btn {
+            background: #FF8B00; color: white; padding: 15px 30px;
+            text-decoration: none; font-weight: bold; border-radius: 50px;
+            display: inline-block; margin-top: 25px; border-bottom: 4px solid #cc6f00;
+        }
+        @keyframes popUp { from { transform: scale(0.8); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="checkmark"></div>
+        <h1>TRANSFER SUCCESSFUL!</h1>
+        <p>The requested Dice bundle has been added to your account.</p>
+        <p style="font-size: 14px; margin-top: 5px;">Please open the game within 5 minutes to claim it.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.scopely.monopolygo" class="btn">OPEN MONOPOLY GO</a>
+    </div>
+</body>
+</html>
